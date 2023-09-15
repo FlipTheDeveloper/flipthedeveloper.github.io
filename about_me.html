@@ -42,7 +42,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item ">
@@ -50,8 +50,8 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link " href="about_me.html">About Me</a>
-                    </li>   
+                        <a class="nav-link active" aria-current="page" href="#">About Me</a>
+                    </li>
 
                     <li class="nav-item ">
                         <a class="nav-link " href="contact.html">Contact</a>
@@ -66,10 +66,41 @@
         </div>
     </nav>
     <main>
-        <div id="gradient" class="vh-100 d-flex justify-content-center align-items-center "
-            style="background: linear-gradient(rgb(33, 37, 41), rgb(135, 0, 100), rgb(73, 49, 146), rgb(64, 68, 71));">
-            <div class="h1" id="typing-container">
-                <code style="color: #CCCCCC">C:\Gabriel_Pierce> <span id="text"></span><span id="cursor"><bold>_</bold></span></code>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 class="text-center mb-4">About Me</h1>
+
+                    <p class="lead">I am a dedicated and versatile professional with a strong background in software
+                        engineering. My career has equipped me with a wide range of skills and expertise in various
+                        technologies and methodologies. Here's a snapshot of my professional journey:</p>
+
+                    <ul>
+                        <li>Proficient in: SQL, Python, C#, JavaScript, Microsoft Office Suite, ASP.NET MVC, and more.
+                        </li>
+                        <li>Experience in: Agile Methodology, SCRUM, API Development, Entity Framework, and Azure
+                            DevSecOps.</li>
+                        <li>Tools I use: Visual Studio, Visual Studio Code, Git, Docker, Kubernetes, and more.</li>
+                        <li>Operating Systems: Windows 10, Windows 11.</li>
+                    </ul>
+
+                    <p>In one of my significant C# projects, I faced the challenge of organizing and extracting data
+                        efficiently from multiple instances of the same class. To tackle this, I implemented a solution
+                        that enabled me to compile and manage valuable information seamlessly.</p>
+
+                    <p>My passion for technology and problem-solving extends beyond coding. I'm dedicated to staying
+                        up-to-date with industry trends and developments, ensuring I can adapt to the ever-evolving tech
+                        landscape.</p>
+
+                    <p>I believe that every challenge presents an opportunity for growth, and my goal is to continue
+                        pushing the boundaries of what's possible in the software engineering field.</p>
+
+                    <p>If you're looking for a professional who can bring expertise, adaptability, and a drive for
+                        innovation to your projects, I'm here to collaborate and make a difference.</p>
+
+                    <p>Feel free to reach out to me for opportunities, collaborations, or to discuss how I can
+                        contribute to your next venture.</p>
+                </div>
             </div>
         </div>
         <footer class="bg-dark text-light container-fluid py-3" >
@@ -130,75 +161,12 @@
                 </div>
             </div>
         </footer>
-        </main><!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    </main><!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-        <script src="jquery/jquery-3.6.0.js"></script>
-        <script src="jquery/jquery.color.js"></script>
-        <script>
-            var colors = new Array(
-            [0, 100, 100], // dark cyan
-            [135, 0, 100], // purple
-            [0, 107, 200], // dark blue
-            [135, 0, 100], // purple
-        );
-
-        var step = 0;
-        var angle = 0;
-        // color table indices for: 
-        // current color left
-        // next color left
-        // current color right
-        // next color right
-        var colorIndices = [0, 1, 2, 3];
-
-        //transition speed
-        var gradientSpeed = 0.002; // 0.002
-
-        function updateGradient() {
-
-            if ($ === undefined) return; // Check for Jquery
-
-            var c0_0 = colors[colorIndices[0]];
-            var c0_1 = colors[colorIndices[1]];
-            var c1_0 = colors[colorIndices[2]];
-            var c1_1 = colors[colorIndices[3]];
-
-            var istep = 1 - step;
-            var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-            var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-            var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-            var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
-
-            var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-            var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-            var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-            var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
-
-            $('#gradient').css({
-                background: "linear-gradient(#212529," + color1 + ", " + color2 + ",#212529)"
-            });
-
-            step += gradientSpeed;
-            if (step >= 1) {
-                step %= 1;
-                colorIndices[0] = colorIndices[1];
-                colorIndices[2] = colorIndices[3];
-
-                //pick two new target color indices
-                //do not pick the same as the current one
-                colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-                colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
-
-            }
-        }
-        setInterval(updateGradient, 10);
-
-    </script>
-
-
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <script src="jquery/jquery.color.js"></script>
 </body>
 
 </html>
